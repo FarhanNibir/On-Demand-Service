@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>
+    {% block title %}
+    {% endblock %}
+  </title>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: green;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <nav class="navbar navbar-expand-lg header-nav">
+    <div class="navbar-header">
+      <a id="mobile_btn" href="javascript:void(0);">
+        <span class="bar-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </a>
+      <a href="index.html" class="navbar-brand logo">
+        <img src="{% static 'assets/img/logo.png'%}" class="img-fluid" alt="Logo">
+      </a>
+      <a href="index.html" class="navbar-brand logo-small">
+        <img src="{% static 'assets/img/logo-icon.png'%}" class="img-fluid" alt="Logo">
+      </a>
+    </div>
+    <div class="main-menu-wrapper">
+      <div class="menu-header">
+        <a href="index.html" class="menu-logo">
+          <img src="{% static 'On_Demand_Service/images/services/logo.png'%}" class="img-fluid" alt="Logo">
+        </a>
+        <a id="menu_close" class="menu-close" href="javascript:void(0);"> <i class="fas fa-times"></i></a>
+      </div>
+      <ul class="main-nav">
+        <li class="active has-submenu">
+          <a href="http://127.0.0.1:8000/home">Home <i class="fas fa-chevron-down"></i></a>
+          <!-- <ul class="submenu">
+            <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="index-two.html">Home 2</a></li>
+            <li><a href="index-three.html">Home 3</a></li>
+            <li><a href="index-four.html">Home 4</a></li>
+            <li><a href="index-five.html">Home 5</a></li> -->
+              <!-- </ul> -->
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/categorise">Categories</a>
+        </li>
+        <li>
+          <a href="{% url 'logout' %}" target="_blank">Log Out</a>
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8000/change-password">Change password</a>
+        </li>
+      </ul
+    </div>
+  </nav>
+</header>
+<!-- /Header -->
+{% block content %}
+    {% endblock %}
+
+</body>
+</html>
